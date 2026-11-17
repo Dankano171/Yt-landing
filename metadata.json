@@ -1,0 +1,6 @@
+{
+  "name": "Threadgist",
+  "description": "A short weekly report from your public YouTube comments: who is waiting on an answer, what viewers are asking for, and what they are pushing back on.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
