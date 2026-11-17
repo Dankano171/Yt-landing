@@ -34,11 +34,11 @@ const ROUTE_META: Record<string, {title: string; description: string}> = {
   },
   '/privacy': {
     title: 'Privacy policy — Threadgist',
-    description: 'Privacy policy placeholder for Threadgist.',
+    description: 'How Threadgist collects, uses and protects your data.',
   },
   '/terms': {
     title: 'Terms of service — Threadgist',
-    description: 'Terms of service placeholder for Threadgist.',
+    description: 'The terms for using Threadgist and its free sample reports.',
   },
 };
 
@@ -65,6 +65,9 @@ export function RouterProvider({children}: {children: React.ReactNode}) {
     if (ogDesc) {
       ogDesc.setAttribute('content', meta.description);
     }
+    const url = `https://threadgist.io${path === '/' ? '/' : path}`;
+    document.querySelector('link[rel="canonical"]')?.setAttribute('href', url);
+    document.querySelector('meta[property="og:url"]')?.setAttribute('content', url);
   }, []);
 
   useEffect(() => {

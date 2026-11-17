@@ -14,10 +14,10 @@ export function Footer() {
             <p className="text-sm text-[#071514]/75">
               Contact:{' '}
               <a
-                href="mailto:hello@threadgist.com"
+                href="mailto:hello@threadgist.io"
                 className="font-medium text-[#1B6B52] underline underline-offset-4 hover:text-[#071514] inline-flex min-h-[44px] items-center sm:min-h-0"
               >
-                hello@threadgist.com
+                hello@threadgist.io
               </a>
             </p>
           </div>

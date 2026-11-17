@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {CheckCircle2} from 'lucide-react';
 import {trackEvent} from '../lib/analytics';
+import {Link} from '../lib/router';
 
 interface FormErrors {
   name?: string;
@@ -112,7 +113,7 @@ export function WaitlistForm() {
       const data = await response.json().catch(() => ({}));
       if (!response.ok || !data.success) {
         setErrors({
-          general: 'Something went wrong. Please email hello@threadgist.com.',
+          general: 'Something went wrong. Please email hello@threadgist.io.',
         });
         return;
       }
@@ -121,7 +122,7 @@ export function WaitlistForm() {
       trackEvent('waitlist_submitted');
     } catch {
       setErrors({
-        general: 'Something went wrong. Please email hello@threadgist.com.',
+        general: 'Something went wrong. Please email hello@threadgist.io.',
       });
     } finally {
       setSubmitting(false);
@@ -353,6 +354,22 @@ export function WaitlistForm() {
                   >
                     {submitting ? 'Sending request...' : 'Get a free sample report'}
                   </button>
+
+                  <p className="text-center text-xs text-[#071514]/70">
+                    <Link
+                      to="/privacy"
+                      className="inline-flex min-h-[44px] items-center font-medium text-[#1B6B52] underline underline-offset-4 hover:text-[#071514]"
+                    >
+                      Privacy
+                    </Link>
+                    <span aria-hidden="true" className="mx-2">·</span>
+                    <Link
+                      to="/terms"
+                      className="inline-flex min-h-[44px] items-center font-medium text-[#1B6B52] underline underline-offset-4 hover:text-[#071514]"
+                    >
+                      Terms
+                    </Link>
+                  </p>
                 </form>
               )}
             </div>
