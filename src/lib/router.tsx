@@ -23,14 +23,14 @@ function normalizePath(path: string): string {
 
 const ROUTE_META: Record<string, {title: string; description: string}> = {
   '/': {
-    title: 'Threadgist — Know what your audience is telling you',
+    title: 'Threadgist. Buyer comments, with a reply you can paste.',
     description:
-      'A short weekly report from your public YouTube comments: who is waiting on an answer, what viewers are asking for, and what they are pushing back on.',
+      'We check your latest YouTube videos every day and email you only when someone is trying to buy and you have not answered.',
   },
   '/sample': {
-    title: 'Sample report — Threadgist',
+    title: 'Sample email — Threadgist',
     description:
-      'An example weekly audience report showing how Threadgist organizes public YouTube comments into clear sections.',
+      'An invented sample email showing a daily buyer comment match, a reply to paste, a three-day reminder, and a weekly video note for Harbor Cohort.',
   },
   '/privacy': {
     title: 'Privacy policy — Threadgist',

@@ -24,7 +24,7 @@ function AppRoutes() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#FBF5EC] text-[#071514]">
+    <div className="min-h-screen flex flex-col bg-[#F9F6F0] text-[#1A1A1A]">
       <Header />
       <div className="flex-1">{page}</div>
       <Footer />
