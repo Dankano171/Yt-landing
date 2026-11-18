@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {
   Calendar,
   Check,
@@ -15,16 +15,15 @@ import {
 } from 'lucide-react';
 import {EmailMockupSection} from '../components/EmailMockupSection';
 import {FaqSection} from '../components/FaqSection';
+import {HeroProductMockup} from '../components/HeroProductMockup';
 import {Reveal} from '../components/Reveal';
 import {WaitlistForm} from '../components/WaitlistForm';
 import {Link, useRouter} from '../lib/router';
 
-const HERO_MOCKUP_IMAGE = '/src/assets/images/hero_ui_mockup_1795012738615.jpg';
 const PLATFORMS = ['Teachable', 'Kajabi', 'Substack', 'Podia', 'Circle'];
 
 export function LandingPage() {
   const {goToSignup} = useRouter();
-  const [heroImgFailed, setHeroImgFailed] = useState(false);
 
   return (
     <main className="bg-[#F9F6F0] text-[#1A1A1A]">
@@ -74,32 +73,9 @@ export function LandingPage() {
               </div>
             </div>
 
-            {/* Right Side: Custom 3D UI Mockup */}
+            {/* Right Side: Interactive 3D Layered UI Mockup */}
             <div className="lg:col-span-6 flex justify-center lg:justify-end">
-              <div className="w-full max-w-[440px] rounded-3xl border border-[#E5DFD3] bg-white p-2 shadow-[0_24px_60px_rgba(26,26,26,0.10)]">
-                {heroImgFailed ? (
-                  <div className="aspect-[3/4] w-full rounded-2xl bg-[#F9F6F0] p-6 flex flex-col justify-center gap-4">
-                    <p className="text-xs font-semibold uppercase tracking-wider text-[#1B6B52]">
-                      Buyer comment detected
-                    </p>
-                    <p className="font-display text-2xl font-semibold text-[#1A1A1A]">
-                      “Is the course still open? I would love to join.”
-                    </p>
-                    <div className="rounded-xl border border-[#E5DFD3] bg-white p-4 text-sm text-[#1A1A1A]/80">
-                      Draft reply ready to paste into YouTube.
-                    </div>
-                  </div>
-                ) : (
-                  <img
-                    src={HERO_MOCKUP_IMAGE}
-                    alt="Floating glassmorphism interface showing a YouTube viewer asking if the course is still open transforming into a Threadgist email notification with a drafted reply"
-                    className="aspect-[3/4] w-full rounded-2xl object-cover"
-                    decoding="async"
-                    referrerPolicy="no-referrer"
-                    onError={() => setHeroImgFailed(true)}
-                  />
-                )}
-              </div>
+              <HeroProductMockup />
             </div>
           </div>
         </div>
